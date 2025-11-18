@@ -1,0 +1,1016 @@
+INTERFACE2
+MODULE: ES6+
+Leerjaar:
+
+2
+
+Sector:
+
+Creative Software Developer
+
+ECMASCRIPT6+ – Javascript but better
+INTRODUCTIE
+
+JavaScript kennen we ondertussen allemaal, in ieder geval “de basics”. Sinds de creatie van
+de JavaScript taal in 1995 door Brendan Eich zijn er echter een hoop nieuwe
+functionaliteiten toegevoegd aan de taal om het developers nog makkelijker te maken.
+JavaScript was namelijk in slechts 10 (!) dagen ontwikkeld. Er was dus genoeg ruimte voor
+verbetering.
+Enter ECMAScript6. ECMAScript is een JavaScript-standaard die bedoeld is om de
+samenwerkingsmogelijkheid van webpagina's tussen verschillende webbrowsers te
+waarborgen. Het is gestandaardiseerd door Ecma International.
+ECMAScript wordt vaak gebruikt voor client-side scripting op het World Wide Web, en het
+wordt steeds vaker gebruikt om server-side applicaties en services te schrijven met behulp
+van Node.js en andere runtime-omgevingen.
+Deze lessen zullen we de focus leggen op de nieuwe functionaliteiten die ES6+ ons hebben
+gebracht, wat hun voordelen zijn en hoe we deze functionaliteiten kunnen toepassen in
+moderne frameworks & runtime-omgevingen.
+TIJDSPLANNING
+
+Week 1
+INTERFACE2, les 1
+
+2 uur
+
+Let / const
+Arrow functions
+Template literals
+
+Week 2
+INTERFACE2, les 2
+
+2 uur
+
+Modules: import / export
+Callbacks
+
+2 uur
+
+Promises
+
+2 uur
+
+Async / await
+
+2 uur
+
+Eindopdracht: NeoCity
+
+2 uur
+
+Eindopdracht: NeoCity
+
+Week 3
+INTERFACE2, les 3
+Week 4
+INTERFACE2, les 4
+Week 5
+INTERFACE2, les 5
+Week 6
+INTERFACE2, les 6
+
+2
+
+ECMASCRIPT6+ – Javascript but better
+BEOORDELINGSRUBRICS
+
+3
+
+ECMASCRIPT6+ – Javascript but better
+LES 1 – 2 UUR
+
+ECMASCRIPT 6+
+INLEIDING
+ES6, ook bekend als ECMAScript 6 of ECMAScript 2015, is een versie van de
+JavaScript-programmeertaal die verschillende nieuwe functies en verbeteringen
+heeft geïntroduceerd. JavaScript is de taal die wordt gebruikt om interactieve en
+dynamische elementen op websites te creëren.
+ES6 was een belangrijke update van JavaScript, met veel verbeteringen om coderen
+in JavaScript efficiënter, georganiseerder en krachtiger te maken.
+Tot nu toe hebben jullie voornamelijk geprogrammeerd in “Vanilla JavaScript”.
+(JavaScript zonder nieuwe implementaties en functionaliteiten.) Nu gaan we een stap
+verder.
+LET OP: houdt er rekening mee dat alle modules (lesstof) die na deze reader komen - en ook
+veel van de SCRIPTING2 leerlijn - afhankelijk zijn van de kennis die je in deze reader opdoet.
+Zorg er dus voor dat je alles goed doorleest en de opdrachten maakt. Anders kom je in de
+komende maanden in de problemen!
+
+EXTERNE BRONNEN
+Let / const:
+Arrow functions:
+Template literals:
+
+educative.io
+mozilla.org
+w3school.com
+
+Video’s
+Wat is es6:
+Let /const:
+Arrow functions:
+Template literals:
+
+Video
+Video
+Video
+Video
+
+4
+
+ECMASCRIPT6+ – Javascript but better
+
+LET & CONST
+
+In JavaScript worden let en const gebruikt om variabelen te maken, wat als containers werkt
+om gegevens op te slaan. Ze verschillen in hoe ze werken en wanneer je ze moet gebruiken.
+1. `let`: let wordt gebruikt om een variabele te maken waarvan de waarde kan veranderen
+(oftewel, een variabele die opnieuw toegewezen kan worden). Je kunt bijvoorbeeld let
+gebruiken om gegevens op te slaan die in de loop van je programma kunnen veranderen.
+
+2. `const`: const wordt gebruikt om een variabele te maken waarvan de waarde niet kan
+veranderen nadat deze is toegewezen (oftewel, een constante variabele). Je zou const
+moeten gebruiken voor waarden die niet mogen worden gewijzigd tijdens de uitvoering van
+je programma.
+
+In het kort:
+-
+
+Gebruik let als je een variabele wilt maken waarvan de waarde kan veranderen.
+Gebruik const als je een constante wilt maken waarvan de waarde niet mag
+veranderen.
+
+Het is een “good practice” om const te gebruiken wanneer je weet dat de waarde niet zal
+veranderen, omdat het helpt om fouten te voorkomen en de leesbaarheid van je code te
+verbeteren. Gebruik let alleen wanneer je van plan bent de waarde te wijzigen.
+
+5
+
+ECMASCRIPT6+ – Javascript but better
+Je vraagt je nu waarschijnlijk af: “maar we hebben toch geleerd te werken met var?” Dat
+klopt. In JavaScript worden let, const en var allemaal gebruikt om variabelen te maken, maar
+ze gedragen zich een beetje anders op het gebied van scope (bereik) en herassignatie (het
+opnieuw toewijzen van waarden).
+Let
+-
+
+Met let kun je een variabele maken die van waarde kan veranderen (overschrijven
+toestaat).
+Het heeft een block scope, wat betekent dat het alleen binnen het blok (bijvoorbeeld
+binnen een functie of een if-statement) waarin het is gedefinieerd, geldig is.
+Je kunt dezelfde naam gebruiken voor een let-variabele in verschillende scopes
+zonder conflicten.
+
+Const
+-
+
+Met const kun je een constante variabele maken waarvan de waarde niet kan
+veranderen (overschrijven verboden is).
+Het heeft ook een block scope, vergelijkbaar met let.
+Je moet een waarde toewijzen aan een const-variabele bij de declaratie, en je kunt
+de waarde niet later wijzigen.
+
+Var
+-
+
+var is de oude manier om variabelen in JavaScript te maken, maar het heeft enkele
+eigenaardigheden.
+Het heeft een function scope of global scope, wat betekent dat het binnen de functie
+waarin het is gedefinieerd, geldig is, of als het buiten functies wordt gedefinieerd, is
+het een globale variabele.
+var kan opnieuw worden toegewezen en gedeclareerd binnen dezelfde scope, wat
+soms tot onbedoelde problemen kan leiden.
+
+Samengevat:
+-
+
+6
+
+Gebruik let voor variabelen waarvan de waarde kan veranderen en binnen een
+beperkt bereik moet blijven.
+Gebruik const voor constanten waarvan de waarde niet mag veranderen.
+Probeer var te vermijden vanwege zijn onvoorspelbare gedrag, en gebruik in plaats
+daarvan let en const
+
+ECMASCRIPT6+ – Javascript but better
+
+OPDRACHT 1A
+
+-
+
+Maak een bestand aan genaamd opdracht1a.js
+Declareer een 'let'-variabele met de naam 'count' en wijs deze de waarde 0 toe.
+Verhoog de waarde van 'count' met 5.
+Declareer een 'const'-variabele met de naam 'name' en wijs deze je voornaam toe.
+Print de waarde van 'name' en 'count' naar de console.
+Probeer de waarde van 'naam' opnieuw toe te wijzen aan je achternaam. Bekijk de foutmelding die
+door de console wordt gegenereerd en leg uit waarom deze is opgetreden.
+
+OPDRACHT 1B
+
+-
+
+Maak een bestand aan genaamd opdracht1b.js
+Declareer een globale variabele met de naam 'globalVar' met behulp van 'let' en wijs er een waarde
+van 10 aan toe.
+Maak een functie met de naam 'modifyVar' die een 'let'-variabele met de naam 'localVar' declareert
+en er een waarde van 5 aan toekent.
+Maak binnen de functie 'modifyVar' een andere variabele met de naam 'innerVar' met behulp van 'let'
+en wijs deze een waarde van 2 toe.
+Print de waarden van 'globalVar', 'localVar' en 'innerVar' zowel binnen als buiten de functie
+'modifyVar'. Verklaar de verschillen in scope.
+
+OPDRACHT 1C
+
+-
+
+7
+
+Maak een bestand aan genaamd opdracht1c.js
+Declareer een 'const'-variabele met de naam 'PI' en wijs deze de waarde 3.14159 toe.
+Probeer een nieuwe waarde toe te wijzen aan 'PI'. Bekijk de foutmelding die door de console wordt
+gegenereerd en leg uit waarom deze is opgetreden.
+Leg uit waarom het gebruik van 'const' voor constante waarden gunstig is voor de leesbaarheid van de
+code en het voorkomen van onbedoelde wijzigingen.
+
+ECMASCRIPT6+ – Javascript but better
+
+ARROW FUNCTIONS
+
+Arrow functions (of pijlfuncties) zijn een compacte en moderne manier om functies te
+definiëren in JavaScript. Ze maken het gemakkelijker om functies te schrijven en kunnen de
+leesbaarheid van je code verbeteren. Het concept van arrow functions kan wat abstract
+lijken, maar we proberen het op een eenvoudige manier uit te leggen.
+In traditionele JavaScript-functies:
+
+Met een arrow function ziet dat er als volgt uit:
+
+Belangrijkste punten om te onthouden:
+-
+
+-
+
+Compacte syntax: Arrow functions hebben een kortere syntax dan traditionele
+functies, wat je code minder omvangrijk maakt.
+Geen "this" binding: Arrow functions gedragen zich anders dan traditionele functies
+met betrekking tot het "this"-context. Ze erven de "this"-waarde van hun omliggende
+scope (waar ze zijn gedefinieerd), in plaats van hun eigen "this" te hebben.
+Geen aparte "return" statement: Als een arrow function slechts één expressie bevat,
+kun je de accolades en het "return" statement weglaten. Het resultaat van die enkele
+expressie wordt automatisch geretourneerd (implicit return).
+
+Voorbeeld zonder accolades {} en impliciete "return":
+
+8
+
+ECMASCRIPT6+ – Javascript but better
+Arrow functions zijn vooral handig voor eenvoudige functies die een korte logica hebben,
+zoals transformeren van gegevens, filteren van arrays, enz.
+Let op: Hoewel arrow functions handig zijn, zijn ze niet altijd de beste keuze voor alle
+situaties, vooral niet wanneer je complexe logica hebt of je de "this"-binding op een
+specifieke manier wilt beheren.
+In essentie zijn arrow functions gewoon een moderne en handige manier om functies in
+JavaScript te schrijven. Ze maken je code vaak beknopter en kunnen de leesbaarheid
+verbeteren, vooral voor kleinere taken.
+
+9
+
+ECMASCRIPT6+ – Javascript but better
+
+OPDRACHT 2A
+
+-
+
+Maak een bestand aan genaamd opdracht2a.js
+Herschrijf de volgende functie naar de arrow function syntaxis
+
+-
+
+Herschrijf ook deze functie naar een arrow function
+
+-
+
+Schrijf een arrow function genaamd double die een getal als parameter neemt en tweemaal de
+waarde van het ingevoerde getal teruggeeft.
+Schrijf een pijlfunctie genaamd filterEvens die een reeks getallen als parameter neemt en een nieuwe
+reeks teruggeeft die alleen de even getallen uit de ingevoerde reeks bevat.
+
+-
+
+OPDRACHT 2B
+
+-
+
+10
+
+Maak een bestand aan genaamd opdracht2b.js
+Maak een globale variabele met de naam globalVar en wijs deze een waarde van 10 toe.
+Maak een object met de naam myObject met een eigenschap met de naam waarde ingesteld op 5.
+Maak binnen myObject een reguliere functie met de naam regularFunction die de waarde van
+this.value en globalVar afdrukt.
+Maak binnen myObject een pijlfunctie met de naam arrowFunction die ook de waarde van this.value
+en globalVar afdrukt.
+Roep zowel regularFunction als arrowFunction aan om de verschillen in de waarde hiervan en het
+bereik van globalVar te observeren en uit te leggen.
+
+ECMASCRIPT6+ – Javascript but better
+
+TEMPLATE LITERALS
+
+Template literals (ook wel template strings genoemd) zijn een moderne manier in JavaScript
+om teksten (strings) te schrijven. Ze werden geïntroduceerd in ES6 en vervangen vaak de
+oude manier van string-samenvoeging met ‘’ + ‘’; Je gebruikt backticks in plaats van gewone
+aanhalingstekens (' of ").
+
+Template literals worden gebruikt om:
+-
+
+Variabelen en expressies in tekst te verwerken
+Strings over meerdere regels te schrijven
+Complexere dynamische teksten te maken op een overzichtelijke manier
+
+Hier een voorbeeld van hoe we vroeger variabelen verwerkten in een string:
+
+Hier een voorbeeld dat gebruik maakt van template literals:
+
+11
+
+ECMASCRIPT6+ – Javascript but better
+Je kunt zelfs berekeningen doen in ${ }
+
+Je kunt tekst uitschrijven over meerdere regels zonder speciale tekens zoals \n
+
+12
+
+ECMASCRIPT6+ – Javascript but better
+
+OPDRACHT 3A
+
+-
+
+Maak een bestand aan genaamd opdracht3a.js
+Maak 3 variabelen aan: naam, klas, opleiding
+Gebruik template literals om het volgende bericht in de console te tonen: “Welkom, naam! Je zit in de
+klas: d2x op de opleiding: opleiding.” (Vervang naam, klas en opleiding met de variabelen.)
+Voeg daarna nog een datum toe in de template literal zodat deze ook in de console komt:
+
+OPDRACHT 3B
+
+13
+
+-
+
+Maak een bestand aan genaamd opdracht3b.js
+Maak de volgende 3 variabelen aan:
+
+-
+
+Bereken het totaalbedrag en toon deze zin in de console, met behulp van een template literal:
+Je bestelde 3 x Tosti. Totaalprijs: €8.25
+
+ECMASCRIPT6+ – Javascript but better
+LES 2 – 2 UUR
+
+IMPORT / EXPORT & ASYNC PROGRAMMING
+INLEIDING
+
+In moderne JavaScript-ontwikkeling is het gebruik van modules (import en export) en
+asynchrone programmeertechnieken essentieel.
+Met import en export kun je je code opdelen in losse bestanden (modules). Dit maakt je
+projecten overzichtelijker, onderhoudsvriendelijker en beter schaalbaar. In plaats van alles in
+één script te schrijven, kun je functies, klassen of variabelen verdelen over meerdere
+bestanden en deze eenvoudig inladen waar nodig.
+Daarnaast is async programming een belangrijk onderdeel van moderne JavaScript. Veel
+taken in webdevelopment zijn asynchroon, zoals het ophalen van data van een API, het lezen
+van bestanden of het uitvoeren van database-queries. Met Promises, async/await en
+callbacks leer je hoe je efficiënt omgaat met dit soort taken zonder dat je programma
+blokkeert.
+Tot nu toe hebben jullie vooral gewerkt met “synchronous JavaScript”. Dat betekent dat de
+code regel voor regel werd uitgevoerd. Nu stappen we over naar asynchrone JavaScript,
+waarmee je professionelere en snellere applicaties kunt maken.
+
+EXTERNE BRONNEN
+Import / export:
+Callback:
+
+w3schools.com
+mozilla.org
+
+Video’s
+Import / export:
+Wat is een callback:
+
+Video
+Video
+
+14
+
+ECMASCRIPT6+ – Javascript but better
+
+IMPORTS & EXPORTS (MODULES)
+
+Stel je voor dat je een groot project maakt, zoals een spel of een website. Als je alle code in
+één bestand zet, wordt het al snel onoverzichtelijk. Je raakt in de war, maakt sneller fouten
+en het wordt moeilijk om samen te werken.
+
+Een module is gewoon een apart JavaScript-bestand waarin je een stukje van je code
+opslaat. Denk aan een keukenkastje met aparte laatjes voor bestek, borden en bekers. Elk
+laatje is een module: netjes, gescheiden en makkelijk te vinden.
+Waarom zijn modules handig?
+1.
+2.
+3.
+4.
+
+Overzichtelijker – je kunt code verdelen over meerdere bestanden.
+Herbruikbaar – een functie kun je later opnieuw gebruiken in een ander project.
+Samenwerken – je kunt met anderen werken aan verschillende onderdelen zonder elkaar in de weg te
+zitten.
+Makkelijker fouten vinden – kleinere bestanden zijn eenvoudiger te testen en te debuggen.
+
+JavaScript modules werken met twee belangrijke woorden:
+export: hiermee zeg je "DIT MAG IEMAND ANDERS GEBRUIKEN"
+import: hiermee zeg je "IK WIL IETS GEBRUIKEN UIT EEN ANDER BESTAND"
+
+Hier een voorbeeld van een rekenmachine:
+
+15
+
+ECMASCRIPT6+ – Javascript but better
+In het bestand math.js maken we twee functies aan. Een functie om twee parameters (a, b)
+bij elkaar op te tellen en een functie om ze te vermenigvuldigen.
+Door het woord “export” voor de functie te zeggen, vertellen we eigenlijk: deze functie mag
+ergens anders ook gebruikt worden.
+
+We kunnen nu dus in een ander bestand de functies “importeren” en gebruiken zoals:
+
+Hier haal je met import de functies op uit math.js. Let op het pad: ./math.js betekent “het
+bestand math.js in dezelfde map”.
+Je verbindt uiteindelijk alles in een HTML bestand:
+
+LET OP: Je móet type="module" toevoegen aan je <script> tag, anders werken import en export
+niet.
+
+16
+
+ECMASCRIPT6+ – Javascript but better
+Soms wil je maar één ding exporteren uit een bestand. Dan gebruik je export default.
+
+En zo importeer je het. (Omdat het een default export is, hoef je geen {} te gebruiken bij het
+importeren.)
+
+17
+
+ECMASCRIPT6+ – Javascript but better
+
+LET OP: DIT WERKT NIET VANAF LOKALE BESTANDEN ( FILE:// )
+De meeste browsers blokkeren import als je je bestanden opent via dubbelklikken (file://). Je
+moet werken via een lokale server. Open dus je HTML-bestand via Live Server!
+
+OPDRACHT 4A
+
+-
+
+Maak een bestand met de naam mathUtils.js en definieer daarin de volgende functies:
+add: Deze functie moet twee getallen als parameters nemen en hun som teruggeven.
+subtract: Deze functie moet twee getallen als parameters nemen en hun verschil teruggeven.
+Maak een ander bestand met de naam opdracht4a.js en importeer de functies optellen en aftrekken
+uit mathUtils.js met behulp van de juiste import syntax.
+Gebruik in opdracht4a.js de geïmporteerde functies om enkele wiskundige bewerkingen uit te voeren
+en de resultaten naar de console af te drukken.
+
+OPDRACHT 4B
+
+-
+
+Maak een bestand met de naam stringUtils.js en definieer daarin de volgende functies:
+capitalize: deze functie moet een tekenreeks als parameter nemen en de hoofdletterversie van de
+tekenreeks retourneren.
+reverse: Deze functie moet een string als parameter nemen en de omgekeerde versie van de string
+retourneren.
+countChars: Deze functie moet een tekenreeks als parameter nemen en het aantal tekens in de
+tekenreeks retourneren.
+Exporteer in het bestand stringUtils.js alle drie de functies met de juiste exportinstructie.
+Importeer in het bestand opdracht4b.js de functies capitalize en countChars uit stringUtils.js en
+gebruik ze om tekenreeksen te manipuleren en de resultaten naar de console af te drukken.
+
+OPDRACHT 4C
+
+-
+
+-
+
+18
+
+Maak een nieuw bestand met de naam logger.js en definieer daarin een functie met de naam
+logMessage. Deze functie moet een tekenreeks als parameter nemen en deze naar de console
+afdrukken.
+Importeer in het bestand mathUtils.js de functie logMessage uit logger.js.
+Wijzig de functies voor optellen en aftrekken in mathUtils.js om een bericht vast te leggen met de
+functie logMessage voordat je het resultaat retourneert.
+Test de gewijzigde functies in het bestand opdracht4c.js en bekijk de gelogde berichten in de console.
+
+ECMASCRIPT6+ – Javascript but better
+
+ASYNCHROON PROGRAMMEREN
+
+Asynchroon programmeren betekent dat je een taak start, maar je programma niet stopt om
+te wachten tot die taak klaar is. In plaats daarvan gaat de code verder, en zodra de taak
+afgerond is krijg je een signaal om verder te gaan.
+Stel je voor:
+1. Je belt een vriend en laat de telefoon overgaan…
+2. Terwijl de telefoon gaat, ga je alvast koffiezetten.
+3. Zodra je vriend opneemt, kun je weer verder praten.
+Dit is precies hoe asynchroon programmeren werkt:
+•
+•
+•
+
+je start iets (de telefoon gaat over)
+je wacht niet actief (je doet ondertussen iets anders)
+als het klaar is (je vriend neemt op), ga je verder
+
+JavaScript draait standaard maar één taak tegelijk (single-threaded). Stel je hebt een trage
+taak, zoals:
+•
+•
+•
+
+Data ophalen van internet (API-call)
+Wachten op input van de gebruiker
+Een bestand lezen van de harde schijf
+
+Als JavaScript op die taak zou wachten, zou je hele website of app bevriezen. Dat wil je
+natuurlijk niet. Daarom gebruiken we asynchrone code, zodat je programma gewoon
+doorloopt.
+Callbacks
+De oudste manier om asynchrone code te schrijven in JavaScript is met callbacks.
+Een callback is een functie die je meegeeft aan een andere functie. Zodra de taak klaar is,
+wordt die callback “teruggebeld”.
+Stel je bestelt een pizza:
+•
+•
+•
+
+19
+
+Je zegt tegen de bezorger: “ALS JE ER BENT, BEL ME DAN OP.”
+Je geeft dus je telefoonnummer mee → dat is de callback.
+De bezorger belt pas als hij klaar is met bezorgen.
+
+ECMASCRIPT6+ – Javascript but better
+
+Wat gebeurt hier?
+1. setTimeout start en wacht 3 seconden.
+2. Intussen gaat de code door → eerst wordt de tafel gedekt en drankjes ingeschonken.
+3. Na 3 seconden voert setTimeout de callback-functie uit: “Pizza is er!”.
+
+Callbacks werken prima, maar als je meerdere callbacks in elkaar gaat nesten (bijvoorbeeld:
+HAAL DATA OP → VERWERK DATA → SLA RESULTAAT OP), krijg je snel rommelige code.
+
+Dit wordt callback hell genoemd:
+•
+•
+•
+
+Diepe inspringing (geneste code)
+Moeilijk leesbaar
+Lastig te onderhouden
+
+Daarom zijn later Promises en async/await geïntroduceerd, die dit probleem oplossen.
+(Daarover meer in de volgende lessen.)
+
+20
+
+ECMASCRIPT6+ – Javascript but better
+
+OPDRACHT 5A
+
+-
+
+Maak een bestand aan genaamd opdracht5a.js
+Maak een functie rekenUit die twee getallen en een callback accepteert.
+rekenUit telt de twee getallen bij elkaar op
+De callback bepaalt wat er met de uitkomst gebeurt.
+
+-
+
+Roep de functie aan met een callback die het resultaat verdubbelt en laat zien in de console.
+
+OPDRACHT 5B
+
+-
+
+21
+
+Maak een bestand aan genaamd opdracht5b.js.
+Schrijf een functie wachtEnVoerUit die twee parameters accepteert:
+o een tijd in milliseconden
+o een callback
+De functie gebruikt setTimeout om na de opgegeven tijd de callback uit te voeren.
+Roep de functie aan met een callback die een bericht naar de console logt, bijvoorbeeld:
+o “Klaar met wachten!”
+
+ECMASCRIPT6+ – Javascript but better
+LES 3 – 2 UUR
+
+PROMISES
+INLEIDING
+
+Callbacks waren lange tijd de manier om asynchrone code in JavaScript te schrijven. Maar
+zoals je hebt gezien kunnen callbacks snel rommelig worden wanneer je meerdere stappen
+na elkaar wilt uitvoeren (callback hell).
+Daarom werd in ES6 een nieuwe manier geïntroduceerd: Promises.
+Een Promise is een object dat de uiteindelijke uitkomst van een asynchrone taak
+vertegenwoordigt. Het is eigenlijk een belofte voor later: de taak kan even duren, maar
+zodra deze is afgerond weet je of het is gelukt of niet.
+Een Promise heeft altijd één van deze toestanden:
+•
+•
+•
+
+Pending → de taak is nog bezig
+Fulfilled → de taak is geslaagd, er is een resultaat
+Rejected → de taak is mislukt, er is een foutmelding
+
+Met .then() geef je aan wat er moet gebeuren als de Promise slaagt, en met .catch() wat er
+moet gebeuren als er iets misgaat.
+Het grote voordeel van Promises is dat ze je code overzichtelijker maken, beter leesbaar zijn
+en een duidelijke manier bieden om fouten op te vangen.
+Later leer je ook async/await, een nog makkelijkere manier om met Promises te werken.
+
+EXTERNE BRONNEN
+
+Promises:
+
+w3schools.com
+
+Video’s
+Promises:
+
+22
+
+Video
+
+ECMASCRIPT6+ – Javascript but better
+
+PROMISES
+
+Zoals je hebt gezien kunnen callbacks gebruikt worden om asynchrone taken uit te voeren.
+Maar er is een probleem: als je meerdere callbacks in elkaar moet nesten, wordt de code al
+snel onoverzichtelijk en moeilijk te onderhouden. Dit staat bekend als callback hell.
+Om dit probleem op te lossen, heeft JavaScript een krachtiger en overzichtelijker
+mechanisme geïntroduceerd: Promises.
+Wat is een Promise?
+Een Promise is een speciaal JavaScript-object dat de uiteindelijke uitkomst van een
+asynchrone operatie vertegenwoordigt.
+•
+•
+
+Een Promise is een belofte voor de toekomst: het kan even duren voordat de taak
+klaar is.
+De Promise kan twee kanten opgaan:
+1. Fulfilled (geslaagd) → de taak is gelukt en geeft een resultaat terug.
+2. Rejected (mislukt) → er ging iets fout, bijvoorbeeld een foutmelding.
+
+Stel je bestelt iets bij een webshop:
+1. Je plaatst de bestelling → dit is het aanmaken van de Promise.
+2. De webshop gaat je pakket verwerken → dit is de asynchrone taak.
+3. Uiteindelijk krijg je een resultaat:
+o Je pakket wordt geleverd (fulfilled).
+o Of je krijgt een bericht dat het niet op voorraad is (rejected).
+Je hoeft niet elke seconde te checken of het pakket er al is: je krijgt vanzelf bericht zodra de
+status verandert.
+
+23
+
+ECMASCRIPT6+ – Javascript but better
+
+Wat gebeurt hier?
+1. De Promise wordt aangemaakt.
+2. Afhankelijk van de uitkomst wordt óf resolve (gelukt) óf reject (mislukt)
+aangeroepen.
+3. Met .then() geef je aan wat er moet gebeuren bij succes.
+4. Met .catch() geef je aan wat er moet gebeuren bij een fout.
+
+Voordelen van Promises
+•
+•
+•
+
+Geen diepe nesten van callbacks → code is overzichtelijker.
+Je kunt meerdere .then() aan elkaar koppelen (chaining).
+Je hebt een duidelijke manier om fouten op te vangen met .catch().
+
+In de volgende lessen leer je hoe je Promises nóg makkelijker kunt gebruiken met
+async/await.
+
+24
+
+ECMASCRIPT6+ – Javascript but better
+
+OPDRACHT 6A
+
+•
+•
+•
+•
+•
+
+Maak een bestand aan genaamd opdracht6a.js
+Gebruik deze URL om een grap op te halen: https://api.chucknorris.io/jokes/random
+Gebruik fetch() om de grap op te halen
+Zet de grap in de console met console.log()
+Voeg een .catch() toe die "Er ging iets mis" laat zien als er iets fout gaat
+
+OPDRACHT 6B
+
+•
+•
+•
+•
+•
+•
+
+Maak een bestand aan genaamd opdracht6b.js
+Gebruik de PokéAPI met dit adres: https://pokeapi.co/api/v2/pokemon/25
+(25 = Pikachu)
+Gebruik fetch() om de data op te halen
+Zet in de console: "Naam van Pokémon: Pikachu"
+Voeg ook een .catch() toe
+
+OPDRACHT 6C
+
+•
+•
+
+•
+•
+•
+•
+•
+
+25
+
+Maak een nieuw bestand aan genaamd opdracht6c.js
+Gebruik deze API:
+https://jsonplaceholder.typicode.com/users/1 (gebruiker bestaat)
+https://jsonplaceholder.typicode.com/users/9999 (gebruiker bestaat niet)
+Maak een fetch naar één van de twee URLs
+Als de gebruiker bestaat, zet je in de console:
+o "Gebruiker gevonden: Leanne Graham"
+Als hij niet bestaat (statuscode 404), zet je in de console:
+o "Gebruiker niet gevonden"
+Gebruik .catch() voor andere fouten zoals geen internet
+Gebruik een if (response.ok) om te controleren of de gebruiker bestaat
+
+ECMASCRIPT6+ – Javascript but better
+LES 4 – 2 UUR
+
+ASYNC / AWAIT
+INLEIDING
+
+Na callbacks en promises is er nog een modernere manier gekomen om asynchroon te
+programmeren in JavaScript: async/await. Deze functionaliteit werd geïntroduceerd in
+ES2017 en maakt het schrijven van asynchrone code veel overzichtelijker.
+Waar je bij promises vaak meerdere .then()-ketens gebruikt, kun je met async/await bijna
+schrijven alsof het gewone, synchrone code is. Dat betekent dat je code beter leesbaar en
+makkelijker te begrijpen wordt.
+Met async maak je een functie asynchroon, en met await laat je JavaScript wachten op de
+uitkomst van een promise. Het lijkt alsof je code “pauzeert”, maar ondertussen kan de rest
+van je programma gewoon doorgaan.
+Async/await combineert dus de kracht van promises met de eenvoud van synchrone code,
+en wordt tegenwoordig als de standaard manier gezien om asynchrone taken in JavaScript
+te schrijven.
+LET OP: De meeste moderne JavaScript-projecten werken standaard met async/await. De
+kennis die je hier opdoet, heb je nodig voor alle komende modules en opdrachten. Besteed
+hier dus voldoende tijd aan!
+
+EXTERNE BRONNEN
+
+Async / await:
+
+w3schools.com
+
+Video’s
+Async / await:
+
+26
+
+Video
+
+ECMASCRIPT6+ – Javascript but better
+
+ASYNC / AWAIT
+
+Je hebt gezien dat callbacks de eerste manier waren om met asynchrone code te werken, en
+dat Promises dat al veel overzichtelijker maakten. Maar JavaScript ging nóg een stap verder:
+met async/await schrijf je asynchrone code alsof het gewone, synchrone code is.
+Als je een functie het sleutelwoord async geeft, verandert er iets belangrijks:
+•
+•
+
+De functie geeft altijd een Promise terug, ook al staat er geen Promise in de code.
+Binnen die functie mag je het sleutelwoord await gebruiken.
+
+Voorbeeld:
+
+Hier lijkt de functie gewoon een string terug te geven, maar eigenlijk wordt het automatisch
+verpakt in een Promise.
+
+Wat betekend await?
+Met await wacht je op de uitkomst van een Promise. Het lijkt alsof je code daar “pauzeert”,
+maar in werkelijkheid gaat de rest van je programma gewoon verder.
+
+27
+
+ECMASCRIPT6+ – Javascript but better
+
+Voorbeeld:
+
+Wat gebeurt hier?
+1. De functie wachtEven geeft een Promise terug.
+2. In de async-functie start gebruiken we await om te wachten tot de Promise is
+opgelost.
+3. Intussen kan de rest van het programma gewoon doorlopen.
+Een groot voordeel van async/await is dat je fouten op een nette manier kunt afhandelen
+met try/catch, net zoals bij gewone code.
+
+28
+
+ECMASCRIPT6+ – Javascript but better
+Waarom async / await gebruiken?
+•
+•
+•
+
+Leesbaar: je code lijkt bijna gewone, stap-voor-stap code.
+Overzichtelijk: geen lange .then()-ketens meer.
+Betrouwbaar: je kunt fouten makkelijk afvangen met try/catch.
+
+Daarom wordt async/await tegenwoordig gezien als de standaard manier om asynchrone
+code in JavaScript te schrijven.
+
+Waarom eerst callbacks en promises leren?
+Misschien vraag je je af waarom we eerst callbacks en promises behandelen, terwijl
+async/await de modernste en makkelijkste manier is om asynchrone code te schrijven.
+Daar zijn een paar goede redenen voor:
+1. Historisch begrip
+o Callbacks waren de eerste manier waarop asynchrone code in JavaScript werd
+opgelost.
+o Veel oudere code en libraries gebruiken nog steeds callbacks. Als developer
+moet je dat kunnen lezen en begrijpen.
+2. Evolutie van JavaScript
+o Promises kwamen later om de problemen van callbacks (callback hell) op te
+lossen.
+o Async/await is eigenlijk een handiger laagje bovenop Promises. Zonder te
+snappen hoe Promises werken, begrijp je async/await niet volledig.
+3. Volledig beeld
+o Door alle drie de manieren te leren, snap je hoe JavaScript met asynchrone
+taken omgaat.
+o Je leert ook beter inschatten welke aanpak geschikt is in welke situatie.
+Kort gezegd: callbacks zijn de basis, promises de verbetering, en async/await de moderne
+standaard. Je leert ze in die volgorde zodat je alles begrijpt – van de oorsprong tot de meest
+efficiënte manier van werken.
+
+29
+
+ECMASCRIPT6+ – Javascript but better
+
+OPDRACHT 7A
+
+•
+•
+•
+•
+•
+•
+•
+
+Maak een bestand aan genaamd opdracht7a.js
+Gebruik deze URL om een grap op te halen:
+https://api.chucknorris.io/jokes/random
+Maak een async functie met de naam haalGrapOp
+Gebruik await fetch(...) om de grap op te halen
+Zet de grap in de console met console.log()
+Roep de functie onderaan het bestand aan
+Voeg een try/catch toe: als er iets fout gaat, toon "Er ging iets mis"
+
+OPDRACHT 7B
+
+•
+•
+•
+•
+•
+•
+•
+
+Maak een bestand aan genaamd opdracht7b.js
+Gebruik deze URL van de PokéAPI: https://pokeapi.co/api/v2/pokemon/25
+Maak een async functie genaamd haalPokemonOp
+Gebruik await om de data op te halen en om te zetten naar .json()
+Toon in de console: "Naam van Pokémon: Pikachu"
+Voeg een try/catch toe voor foutafhandeling
+Roep de functie aan onderaan je script
+
+OPDRACHT 7C
+
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+
+30
+
+Maak een nieuw bestand aan genaamd opdracht7c.js
+Gebruik deze API:
+https://jsonplaceholder.typicode.com/users/1 (gebruiker bestaat)
+https://jsonplaceholder.typicode.com/users/9999 (gebruiker bestaat niet)
+Maak een async functie controleerGebruiker()
+Gebruik await fetch(...) om een gebruiker op te halen
+Gebruik if (response.ok) om te controleren of de gebruiker bestaat
+Als de gebruiker bestaat, zet in de console:
+"Gebruiker gevonden: Leanne Graham"
+Als de gebruiker niet bestaat (statuscode 404), zet in de console:
+"Gebruiker niet gevonden"
+Gebruik catch om andere fouten (zoals geen internet) op te vangen
+Roep de functie aan onderaan het bestand
+
+ECMASCRIPT6+ – Javascript but better
+LES 5 & 6 – 4 UUR
+
+EINDOPDRACHT: NEOCITY
+
+31
+
+ECMASCRIPT6+ – Javascript but better
+Wat is NeoCity?
+NeoCity is een interactieve fictieve stad die volledig gebouwd wordt met moderne front-end
+technologieën. Jij en je klasgenoten zijn de ontwikkelaars, ontwerpers en
+systeemarchitecten van deze digitale metropool. Elke student ontwikkelt een eigen
+“district”, “app” of “interface” die samen de stad tot leven brengen. NeoCity groeit met je
+kennis mee: wat je leert in de lessen, pas je direct toe in je district.
+Wat ga je maken?
+Je bouwt een functioneel en visueel aantrekkelijk onderdeel van NeoCity, waarin je laat
+zien dat je front-end development op professioneel niveau beheerst. Iedere module (ES6,
+SASS, React, etc.) voegt nieuwe functionaliteit toe aan je district.
+
+Voorbeelden:
+•
+•
+•
+•
+•
+
+In module 1 leer je moderne JavaScript en bouw je een data-hub of simulatie. (Je
+past dus asynchroon programmeren toe.)
+In module 2 pas je SCSS toe voor consistente, thematische styling.
+In module 3 optimaliseer je je district voor SEO en responsiveness.
+In module 4 koppel je je interface aan React componenten.
+In module 5 voeg je animaties toe (GSAP).
+
+Alles wat je maakt komt uiteindelijk samen in een eindpresentatie en showcase, waarin
+NeoCity als interactieve stad wordt gepresenteerd.
+
+Wat lever je op?
+Aan het eind van het schooljaar lever je:
+•
+•
+•
+•
+
+32
+
+Een werkend front-end project (jouw district) met code en styling
+Integratie met de gezamenlijke NeoCity omgeving
+Een README met uitleg over jouw keuzes, gebruikte technieken en codevoorbeelden
+Een pitch/demo van jouw onderdeel tijdens de NeoCity Showcase
+
+ECMASCRIPT6+ – Javascript but better
+Beoordeling
+Je werk wordt beoordeeld op:
+•
+•
+•
+•
+
+Techniek (functionele werking, codekwaliteit, ES6+/React/SASS gebruik)
+Vormgeving (stijl, responsiveness, consistentie)
+Creativiteit & eigen inbreng
+Presentatie van jouw NeoCity district
+
+Waarom dit project?
+NeoCity laat je niet alleen zien wat je kunt, maar ook wie je bent als ontwikkelaar. Je laat
+creativiteit en technisch inzicht samensmelten in een project waar jij de baas bent. En... het
+eindresultaat is een collectieve digitale stad waar je trots op kunt zijn.
+
+33
+
+

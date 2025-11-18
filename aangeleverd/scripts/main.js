@@ -4,16 +4,7 @@ import uiRenderer from "./uiRenderer.js";
 let alleMemes = [];
 
 const maakFilters = (memes) => {
-    // verzamel unieke jaren met forEach, includes checkt of het er al in zit
-    let jaren = [];
-    memes.forEach(m => {
-        if (!jaren.includes(m.year)) {
-            jaren.push(m.year);
-        }
-    });
-    // sorteer de jaren van nieuw naar oud, b - a zorgt dat de hoogste eerst komt
-    jaren.sort((a,b) => b - a);
-    
+    // Het verzmelt alle unieke categorieën in een array
     let cats = [];
     memes.forEach(m => {
         if (!cats.includes(m.category)) {
@@ -21,11 +12,11 @@ const maakFilters = (memes) => {
         }
     });
 
-    // vul de jaar dropdown, innerHTML += voegt elke optie toe
+    // getElementById pakt het select element en innerHTML zet er HTML in
     const jaarSelect = document.getElementById("year-filter");
     jaarSelect.innerHTML = '<option value="all">Alle jaren</option>';
     
-    // groepeer jaren in periodes
+    // Hier heb ik de periodes hardcoded
     jaarSelect.innerHTML += '<option value="2020-2025">2020-2025</option>';
     jaarSelect.innerHTML += '<option value="2016-2020">2016-2020</option>';
     jaarSelect.innerHTML += '<option value="2010-2015">2010-2015</option>';
@@ -34,12 +25,13 @@ const maakFilters = (memes) => {
 
     const catSelect = document.getElementById("category-filter");
     catSelect.innerHTML = '<option value="all">Alle categorieën</option>';
-    // forEach maakt voor elke categorie een option met ${} voor de waardes
+    // Met forEach maak ik voor elke categorie een option, ${c} stopt de categorie naam erin
     cats.forEach(c => {
         catSelect.innerHTML += `<option value="${c}">${c}</option>`;
     });
 };
 
+// Het update de memes op basis van de filters
 const updateMemes = () => {
     const filters = {
         jaar: document.getElementById("year-filter").value,
@@ -48,24 +40,27 @@ const updateMemes = () => {
     uiRenderer(alleMemes, filters);
 };
 
+// Het reset de filters naar all en update de memes
+// Reset zet beide filters terug naar all en toont alle memes weer
 const resetFilters = () => {
     document.getElementById("year-filter").value = "all";
     document.getElementById("category-filter").value = "all";
     updateMemes();
 };
 
-// start de hele applicatie
-async function start() {
+// Start de applicatie op
+// Start functie is async zodat ik await kan gebruiken
+const start = async () => {
     document.getElementById("loading").style.display = "block";
     
     alleMemes = await dataService();
     
+    //  Als er memes zijn geladen maak de fillters en update de weergave
     if (alleMemes.length > 0) {
         maakFilters(alleMemes);
         updateMemes();
         document.getElementById("loading").style.display = "none";
         
-        // addEventListener vangt de change event op, roept updateMemes aan voor real-time filtering
         document.getElementById("year-filter").addEventListener("change", updateMemes);
         document.getElementById("category-filter").addEventListener("change", updateMemes);
         document.getElementById("reset-btn").addEventListener("click", resetFilters);
