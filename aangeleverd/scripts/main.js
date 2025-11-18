@@ -4,7 +4,7 @@ import uiRenderer from "./uiRenderer.js";
 let alleMemes = [];
 
 const maakFilters = (memes) => {
-    // Het verzmelt alle unieke categorieën in een array
+    // Het verzameld alle unieke categorieën in een array
     let cats = [];
     memes.forEach(m => {
         if (!cats.includes(m.category)) {
@@ -16,7 +16,7 @@ const maakFilters = (memes) => {
     const jaarSelect = document.getElementById("year-filter");
     jaarSelect.innerHTML = '<option value="all">Alle jaren</option>';
     
-    // Hier heb ik de periodes hardcoded
+    // Hier heb ik de periodes toegevoegd
     jaarSelect.innerHTML += '<option value="2020-2025">2020-2025</option>';
     jaarSelect.innerHTML += '<option value="2016-2020">2016-2020</option>';
     jaarSelect.innerHTML += '<option value="2010-2015">2010-2015</option>';
