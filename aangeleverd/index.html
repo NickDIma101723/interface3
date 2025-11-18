@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Museum - Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./scripts/main.js" defer></script>
+</head>
+<body class="overflow-x-hidden bg-white">
+    <header class="py-6 px-8 bg-white border-b border-black">
+        <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold">MEME MUSEUM</h1>
+        </div>
+    </header>
+    <div class="py-8 px-8 bg-white border-b border-black">
+        <h2 class="text-4xl font-bold mb-8">Gallery</h2>
+        <div class="flex gap-6 items-end mb-6">
+                        <div class="flex-1 max-w-xs">
+                <label for="year-filter" class="block text-sm font-medium mb-2 uppercase tracking-wide">Filter op jaar</label>
+                <select id="year-filter" class="w-full bg-white border-2 border-black px-6 py-4 pr-10 text-base font-medium focus:outline-none focus:border-gray-800 cursor-pointer">
+                    <option value="all">Alle jaren</option>
+                </select>
+            </div>
+            <div class="flex-1 max-w-xs">
+                <label for="category-filter" class="block text-sm font-medium mb-2 uppercase tracking-wide">Filter op categorie</label>
+                <select id="category-filter" class="w-full bg-white border-2 border-black px-6 py-4 pr-10 text-base font-medium focus:outline-none focus:border-gray-800 cursor-pointer">
+                    <option value="all">Alle categorieën</option>
+                </select>
+            </div>
+            <button id="reset-btn" class="bg-black text-white px-8 py-4 text-sm uppercase tracking-wider font-bold hover:bg-gray-800 transition-colors border-2 border-black">
+                Reset
+            </button>
+        </div>
+        <p id="results-count" class="text-sm text-gray-700 font-medium uppercase tracking-wide">Laden...</p>
+    </div>
+    <div class="relative">
+        <div id="meme-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"></div>
+    </div>
+    <div id="loading" class="text-center py-32 text-xl">Memes laden...</div>
+</body>
+</html>
